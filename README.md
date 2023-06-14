@@ -1,1 +1,1 @@
-# projetoPreguica
+# projetoedpreg

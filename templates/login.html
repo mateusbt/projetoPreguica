@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/projetoPreguica-main/static/css/styleL.css">
+    <script defer src="/projetoPreguica-main/JavaScript/login.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    
+    <div class="main-login">
+        <div class="left-login">
+            <h1>Faça login <br>e acesse todo conteúdo</h1>
+            <img src="/projetoPreguica-main/images/carro2.svg" class="left-login-image" alt="Carro">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>LOGIN</h1>
+                <div class="textfield">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" name="usuario" id="login" placeholder="Usuário">
+                </div>
+                <div class="textfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" id="senha" placeholder="Senha">
+                    
+                </div>
+                <button class="botao" type="submit" onclick="logar();return false" >Logar</button>
+                    <p>
+                        Não tem uma conta?
+                        <a class="cadastro" href="registro.html">
+                          Cadastre-se
+                        </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
