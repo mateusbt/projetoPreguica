@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,9 @@
     <script defer src="/JavaScript/login.js"></script>
     <title>Login</title>
 </head>
+
 <body>
-    
+
     <div class="main-login">
         <div class="left-login">
             <h1>Faça login <br>e acesse todo conteúdo</h1>
@@ -19,22 +21,24 @@
             <div class="card-login">
                 <h1>LOGIN</h1>
                 <div class="textfield">
-                    <label for="usuario">Usuário</label>
-                    <input type="text" name="usuario" id="login" placeholder="Usuário">
+                    <form action="/login" method="post">
+                        <label for="usuario">Usuário</label>
+                        <input type="text" name="usuario" id="login" placeholder="Usuário">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" id="senha" placeholder="Senha">
+                        <button class="botao" type="submit">Logar</button>
+                    </form>
                 </div>
-                <div class="textfield">
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha" id="senha" placeholder="Senha">
-                    
-                </div>
-                <button class="botao" type="submit" onclick="logar();return false" >Logar</button>
-                    <p>
-                        Não tem uma conta?
-                        <a class="cadastro" href="registro.html">
-                          Cadastre-se
-                        </a>
+                
+                <p>
+                    Não tem uma conta?
+                    <a class="cadastro" href="/registro">
+                        Cadastre-se
+                    </a>
+
             </div>
         </div>
     </div>
 </body>
+
 </html>

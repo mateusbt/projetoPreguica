@@ -16,7 +16,14 @@ def teste2():
 def principal():
     return render_template('registro.html')
 
-
+@app.route('/login',methods=['POST'])
+def login():
+    login = request.form['usuario']
+    senha = request.form['senha']
+    if login == 'aluno' and senha == '1234':
+        return redirect(url_for('hello_world'))
+    else:        
+        return redirect(url_for('teste2'))
 
 
 if __name__ == '__main__':
