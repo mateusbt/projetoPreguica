@@ -81,6 +81,7 @@ nav ul button {
   color: var(--blue);
   font-weight: bold;
   border-radius: 4px;
+  height: 40px;
 }
 
 nav ul button:hover {
