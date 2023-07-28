@@ -54,7 +54,7 @@ body *{
     
 }
 
-.card-login >h1 {
+.card-login > h1 {
     color: rgb(54, 54, 54);
     font-weight: 800;
     margin: 0;
@@ -69,7 +69,7 @@ body *{
     justify-content: center;
 }
 
-.textfield>input {
+.textfield input {
     width: 100%;
     border: none;
     border-radius: 10px;
@@ -82,11 +82,11 @@ body *{
     box-sizing: border-box;
     margin-bottom: 10px;
 }
-.textfield>label{
+.textfield label{
     color: #000000de;
     margin-bottom: 10px;
 }
-.textfield> input::placeholder {
+.textfield input::placeholder {
     color: #00000094;
 }
 
