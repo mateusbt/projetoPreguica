@@ -105,7 +105,7 @@ nav ul button:hover {
 }
 
 .header-block img {
-  width: 50%;
+  width: 50%;display: block;
   position: absolute;
   right: 2%;
   bottom: 2%;
@@ -222,9 +222,12 @@ section .card-item {
   font-style: italic;
   color: #00000070;
 }
-
-.card-item button {
+.card-item a{
   width: 90%;
+}
+.card-item button{
+  
+  width: 100%;
   padding: 15px 0px;
   border: none;
   background: var(--blue);
@@ -236,6 +239,7 @@ section .card-item {
   transition: 0.3s ease;
   margin-bottom: 10px;
 }
+
 
 .card-item button:hover {
   background: #dedede;
