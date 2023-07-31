@@ -104,6 +104,7 @@ body *{
     background: rgb(23, 113, 248);
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px #03030352;
+    margin-left: auto;
     
     
 }
