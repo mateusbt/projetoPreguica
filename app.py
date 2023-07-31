@@ -50,6 +50,10 @@ def cadastro():
         return redirect ('/login')
     return redirect ('/registro')
 
+@app.route('/carro')
+def auditt():
+    return "carro"
+    
 
 @app.route('/sair')
 def sair():
