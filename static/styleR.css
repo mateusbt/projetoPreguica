@@ -47,7 +47,7 @@ body *{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 30px 35px;
+    padding: 67px 0px;
     background: #e5def8;;
     border-radius: 20px;
     
@@ -58,12 +58,13 @@ body *{
     color: rgb(54, 54, 54);
     font-weight: 800;
     margin: 0;
-    
+    display: flex;
+    justify-content: center;
 }
 
 .textfield{ 
     width: 100%;
-    display: flex;
+    display: contents ;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -80,20 +81,24 @@ body *{
     box-shadow: 0px 10px 40px #b6dffae7 ;
     outline: none;
     box-sizing: border-box;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 .textfield label{
     color: #000000de;
-    margin-bottom: 10px;
+    margin: 10px;
+    
 }
 .textfield input::placeholder {
     color: #00000094;
+    
 }
 
 .btn-login{
-    width: 100%;
-    padding: 16px 0px;
-    margin: 25px;
+    display: block;
+    width: 90%;
+    padding: 15px 0px;
+    margin: 23px;
     border: none;
     border-radius: 50px;
     outline: none;
@@ -106,6 +111,8 @@ body *{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px #00000052;
+    margin-left: auto;
+    margin-right: auto;
     
     
 }
