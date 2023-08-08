@@ -12,7 +12,7 @@ body *{
 .main-login{
     width: 100vw;
     height: 100vh;
-    background: #e5def8;;
+    background: rgb(98, 142, 207);;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,7 +48,7 @@ body *{
     align-items: center;
     flex-direction: column;
     padding: 30px 35px;
-    background: #e5def8;;
+    background: #98b8fd;;
     border-radius: 20px;
     
     
@@ -74,10 +74,10 @@ body *{
     border: none;
     border-radius: 10px;
     padding: 15px;
-    background: #e5def8;;
+    background: #ffffff;;
     color: #000000de;
     font-size: 12pt;
-    box-shadow: 0px 10px 40px #b6dffae7 ;
+    box-shadow: 0px 10px 40px #f8f8f8e7 ;
     outline: none;
     box-sizing: border-box;
     margin-bottom: 10px;
@@ -101,9 +101,9 @@ body *{
     font-weight: 800;
     letter-spacing: 3px;
     color: #000000;
-    background: rgb(23, 113, 248);
+    background: rgb(98, 142, 207);
     cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #03030352;
+    box-shadow: 0px 10px 40px -12px #000000;
     margin-left: auto;
     
     
