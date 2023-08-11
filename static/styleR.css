@@ -12,7 +12,7 @@ body *{
 .main-login{
     width: 100vw;
     height: 100vh;
-    background: #e5def8;;
+    background: rgb(98, 142, 207);;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,8 +48,8 @@ body *{
     align-items: center;
     flex-direction: column;
     padding: 67px 0px;
-    background: #e5def8;;
-    border-radius: 20px;
+    background: #98b8fd;;
+    border-radius: 50px;
     
     
 }
@@ -71,7 +71,7 @@ body *{
 }
 
 .textfield input {
-    width: 100%;
+    width: 90%;
     border: none;
     border-radius: 10px;
     padding: 15px;
@@ -83,10 +83,12 @@ body *{
     box-sizing: border-box;
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: 30px;
 }
 .textfield label{
     color: #000000de;
     margin: 10px;
+    margin-left: 30px;
     
 }
 .textfield input::placeholder {
@@ -107,7 +109,7 @@ body *{
     font-weight: 800;
     letter-spacing: 3px;
     color: #070707;
-    background: rgb(23, 113, 248);
+    background:rgb(98, 142, 207);;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px #00000052;

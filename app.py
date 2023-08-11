@@ -52,7 +52,7 @@ def cadastro():
 
 @app.route('/carro')
 def auditt():
-    return "carro"
+    return redirect ('/anuncio')
     
 
 @app.route('/sair')
@@ -62,5 +62,9 @@ def sair():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+@app.route('/anuncio')
+def anuncio():
+    return render_template('anuncio.html')
 
     
