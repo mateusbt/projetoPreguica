@@ -1,4 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
+#from autenticacao.routes import autenticacao_bp
+
+
 
 
 
@@ -45,10 +48,17 @@ def cadastro():
     senha = request.form['senha']
     confirmsenha=request.form['senha2']
 
-    if senha==confirmsenha:
-        dados.append(Usuario(usuario,senha))
-        return redirect ('/login')
-    return redirect ('/registro')
+    for dado in dados:
+        if dado.usuario == usuario:
+            flash("Usuario já existente")
+            return redirect ('/registro')
+    
+    if senha == confirmsenha:
+        dados.append(Usuario(usuario, senha))
+        return redirect("/login")
+    
+    else:
+        flash("Senhas diferentes")
 
 @app.route('/carro')
 def auditt():
@@ -59,6 +69,14 @@ def auditt():
 def sair():
     del session['logado']
     return redirect ('/login')
+
+@app.route('/v')
+def teste():
+    texto = ""
+    for dado in dados:
+        texto += f"usuario: {dado.usuario}, senha: {dado.senha}|| "
+    return texto
+    
 
 if __name__ == '__main__':
     app.run(debug=True)
