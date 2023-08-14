@@ -11,9 +11,10 @@
 }
 
 :root {
-  --orange: #f78b00;
-  --blue: #00285f;
+  --orange:  rgb(98, 142, 207);
+  --blue: #98b8fd;
   --gray: #ededed;
+  --black: rgb(0, 0, 0);
 }
 
 html,
@@ -48,7 +49,7 @@ nav {
 
 .brand {
   font-size: 24px;
-  color: var(--blue);
+  color: var(--black);
   
 }
 
@@ -64,17 +65,17 @@ nav ul li {
 }
 
 nav ul li a {
-  color: var(--blue);
+  color: var(--black);
   text-decoration: none;
 }
 
 nav ul li a:hover {
-  color: #00285f83;
+  color: var(--blue);
 }
 
 nav ul button {
-  border: 1px solid var(--blue);
-  background: transparent;
+  border: 1px solid var(--black);
+  background: var(--black);
   padding: 8px 40px;
   cursor: pointer;
   margin-left: 30px;
@@ -86,7 +87,7 @@ nav ul button {
 
 nav ul button:hover {
   transition: background, color 0.6s;
-  background: var(--blue);
+  background: var(--black);
   color: white;
 }
 
@@ -105,10 +106,14 @@ nav ul button:hover {
 }
 
 .header-block img {
-  width: 50%;display: block;
+  width: 58%;
+  display: block;
   position: absolute;
   right: 2%;
   bottom: 2%;
+  margin-bottom: 50px;
+  
+
 }
 
 .header-block .text {
@@ -165,7 +170,7 @@ section .filter-card {
   height: 50px;
   border-radius: 0px 4px 4px 0px;
   border: none;
-  background: var(--blue);
+  background: var(--black);
   color: white;
   cursor: pointer;
   font-size: 1.1em;
@@ -230,7 +235,7 @@ section .card-item {
   width: 100%;
   padding: 15px 0px;
   border: none;
-  background: var(--blue);
+  background: var(--black);
   border-radius: 4px;
   color: white;
   font-weight: bold;
