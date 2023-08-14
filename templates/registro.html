@@ -5,10 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/styleR.css">
-    <script defer src="/JavaScript/login.js"></script>
+    <script defer src="/projetoPreguica-main/JavaScript/registro.js"></script>
     <title>Cadastro</title>
 </head>
 <body>
+    <script> 
+     function verificarCadastro() {var nomeUsuario = document.getElementById('nome').value;
+     if (nomeUsuario === 'usuarioexistente'){ 
+        var mensagem = document.getElementById('mensagem');
+        mensagem.innerHTML = 'usuario ja cadastrados'; 
+        return false;
+      }}
+    
+
+    </script>
     <div class="main-login">
         <div class="left-login">
             <h1>Cadastre-se <br>e acesse todo conteúdo</h1>
@@ -22,17 +32,17 @@
                 <div class="textfield">
                     
                     <label for="usuario">Usuário</label>
-                    <input id="nome" type="text" name="usuario" placeholder="Usuário" required>
+                    <input id="nome" type="text" name="usuario" placeholder="Usuário" pattern='[A-Za-z]+' required on>
                 </div>
                 <div class="textfield">
                     <label for="senha">Senha</label>
-                    <input id = senha type="password" name="senha" placeholder="Senha" required>
+                    <input id = senha type="password" name="senha" placeholder="Senha" minlength=''  required onchange="this.value=this.value.trim()">
                 </div>
                 <div class="textfield">
                     <label for="senha">Confirmar Senha</label>
-                    <input id = senha type="password" name="senha2" placeholder="Senha" required>
+                    <input id = senha type="password" name="senha2" placeholder="Senha" minlength=''  required onchange="this.value=this.value.trim()">
                 </div>
-                    <button class="btn-login">Cadastrar</button>
+                    <button class="btn-login" onclick="exibirMensagem()">Cadastrar</button>
                 </form>
             </div>
         </div>
