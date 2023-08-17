@@ -207,10 +207,34 @@ nav ul button:hover {
   padding: 10px;
 }
 
-.part2 h1{
-  color: red;
-  text-decoration: solid;
-  margin-left: 300px;
+.catalog {
+  width: 100vw;
+  padding: 100px;
+  display: inline-block;
+}
+
+
+section .content {
+ 
+    width: 980px;
+    height: 150px;
+    background: transparent;
+    border-radius: 8px;
+    margin: 0 auto;
+    
+    flex-direction: column;
+    
+    justify-content: space-around;
+    border: 1px solid #f100003b;
+    
+  }
+
+.preco{
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+section p{
+  display: ;
 }
 
 /* Responsive adjustments */
@@ -294,4 +318,23 @@ nav ul button:hover {
     flex-direction: column;
     padding-left: 10%;
   }
-}
+
+--#{$prefix}card-spacer-y: #{$card-spacer-y};
+--#{$prefix}card-spacer-x: #{$card-spacer-x};
+--#{$prefix}card-title-spacer-y: #{$card-title-spacer-y};
+--#{$prefix}card-title-color: #{$card-title-color};
+--#{$prefix}card-subtitle-color: #{$card-subtitle-color};
+--#{$prefix}card-border-width: #{$card-border-width};
+--#{$prefix}card-border-color: #{$card-border-color};
+--#{$prefix}card-border-radius: #{$card-border-radius};
+--#{$prefix}card-box-shadow: #{$card-box-shadow};
+--#{$prefix}card-inner-border-radius: #{$card-inner-border-radius};
+--#{$prefix}card-cap-padding-y: #{$card-cap-padding-y};
+--#{$prefix}card-cap-padding-x: #{$card-cap-padding-x};
+--#{$prefix}card-cap-bg: #{$card-cap-bg};
+--#{$prefix}card-cap-color: #{$card-cap-color};
+--#{$prefix}card-height: #{$card-height};
+--#{$prefix}card-color: #{$card-color};
+--#{$prefix}card-bg: #{$card-bg};
+--#{$prefix}card-img-overlay-padding: #{$card-img-overlay-padding};
+--#{$prefix}card-group-margin: #{$card-group-margin};
