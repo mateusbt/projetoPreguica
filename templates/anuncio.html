@@ -8,6 +8,7 @@
 
     <link  rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"  crossorigin="anonymous">
     <link rel="stylesheet" href= "/static/anuncio.css">
+    <link rel="stylesheet" href="/static/home.css">
   <body>
     <header>
       <div class="content">
@@ -70,9 +71,9 @@
         </div>
       </div>
     </header>
-    <section class="catalog" id="catalog">
+    <section class="catalog container " id="catalog">
       <div class="card">
-  <h5 class="card-header">Jetta GLI 2021</h5>
+  <h5 class="card-header">Jetta GLI 2020</h5>
   <div class="card-body">
     <strong id="" class="valor">R$ 183.900</strong>
     <div class="container text-center">
@@ -83,7 +84,7 @@
         </div>
         <div class="col-6">
           <h2 class="ano">Ano:</h2>
-            <p>2021/2021</p>
+            <p>2020/2020</p>
         </div>
         <div class="col">
           <h2 class="km">KM: </h2>
@@ -101,19 +102,31 @@
         </div>
         <div class="col">
           <h2 class="cor">Cor:</h2>
-         <p>Cinza</p>
+         <p>Branco</p>
         </div>
       </div>
     </div>
     <h2 class="textdesc">Descrição do veiculo: </h2>
     <p class="card-text">SEM DETALHES,UNICO DONO,TODAS AS REVISOES NA VOLKS,GARANTIA DE FÁBRICA,TETO-SOLAR</p>
-    <a href="#" class="btn btn-primary">Comprar veículo</a>
+    <a href="#" class="btn btn-primary">Entrar em contato com vendedor</a>
+  </div>
+</div>
+    </section>
+    <section class="catalog2">
+      <div class="card my-5 container p-4">
+  <h5 class="card-header">Contatos do vendedor abaixo:</h5>
+  <div class="card-body">
+    <strong id="" class="valor">83987838300</strong>
+
+    <h2 class="textdesc">Email do vendedor: </h2>
+    <p class="card-text">mateushbt2021@gmail.com</p>
+
   </div>
 </div>
     </section>
   <body>
       
-    
+    {% include 'footer.html'%}
        
      
     <script  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"  crossorigin="anonymous"></script>

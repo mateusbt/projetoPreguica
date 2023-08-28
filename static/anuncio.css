@@ -198,20 +198,13 @@ nav ul button:hover {
 #radio:checked ~ .navegation-auto .auto-btn3{
   background-color: #fff;
 }
-.part2 {
-  max-width: 1000px;
-  min-width: 300px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
+  
 
 .catalog {
-  width: 100vw;
-  padding: 100px;
-  display: inline-block;
+  margin-top: 100px;
+ 
 }
+
 
 
 section .content {
@@ -258,6 +251,13 @@ font-weight: 400;
   font-weight: 500;
   letter-spacing: .04px;
   color: #2e2d37;
+}
+.email{
+  
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: .04px;
+    color: #2e2d37;
 }
 .cor{
     display: -webkit-box;
@@ -316,12 +316,22 @@ font-weight: 400;
     font-weight: 400;
     margin-left: 110px;
 }
+.btn-primary{
+  color: black;
+  
+}
+
+.catalog2 {
+  display: block;
+}
+.card-body{
+  box-shadow: 0px 10px 40px rgb(54, 54, 54) ;
 /* Responsive adjustments */
 
 @media (max-width: 576px) {
   nav ul li {
     display: none;
-  }
+  }}
 
   .header-block img {
     width: 70%;
