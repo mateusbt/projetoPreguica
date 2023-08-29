@@ -9,16 +9,6 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <script> 
-     function verificarCadastro() {var nomeUsuario = document.getElementById('nome').value;
-     if (nomeUsuario === 'usuarioexistente'){ 
-        var mensagem = document.getElementById('mensagem');
-        mensagem.innerHTML = 'usuario ja cadastrados'; 
-        return false;
-      }}
-    
-
-    </script>
     <div class="main-login">
         <div class="left-login">
             <h1>Cadastre-se <br>e acesse todo conteúdo</h1>
@@ -28,22 +18,69 @@
             <div class="card-login">
                 
                 <h1>Cadastro</h1>
+
                 <form class="form" action="/registro", method="post">
                 <div class="textfield">
-                    
                     <label for="usuario">Usuário</label>
-                    <input id="nome" type="text" name="usuario" placeholder="Usuário" pattern='[A-Za-z]+' required on>
+                    <input id="nome" 
+                        type="text" 
+                        name="usuario"
+                        placeholder="Usuário"
+                        pattern='[A-Za-z]+' 
+                        onchange="this.value=this.value.trim()"
+                        required >
+                </div>
+               
+                <div class="textfield">
+                   <label for="cpf">CPF:</label>
+                   <input id="cpf"
+                   type="text"
+                   placeholder="cpf"
+                   inputmode="numeric"
+                   minlength="11"
+                   maxlength="14"
+                   pattern="^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}"
+                   required
+                   autocomplete="off">
+   
                 </div>
                 <div class="textfield">
                     <label for="senha">Senha</label>
-                    <input id = senha type="password" name="senha" placeholder="Senha" minlength=''  required onchange="this.value=this.value.trim()">
+                    <input id = senha 
+                    type="password" 
+                    name="senha" 
+                    placeholder="Senha"
+                    onchange="this.value=this.value.trim()"
+                    minlength="6"
+                   
+                    required>
                 </div>
                 <div class="textfield">
                     <label for="senha">Confirmar Senha</label>
-                    <input id = senha type="password" name="senha2" placeholder="Senha" minlength=''  required onchange="this.value=this.value.trim()">
+                    <input id = senha 
+                    type="password" 
+                    name="senha2" 
+                    placeholder="Senha"
+                    onchange="this.value=this.value.trim()"
+                    minlength="6"
+                
+                    
+                    required
+                     
+                     >
                 </div>
-                    <button class="btn-login" onclick="exibirMensagem()">Cadastrar</button>
+                    <button class="btn-login">Cadastrar</button>
                 </form>
+                
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                    <ul class=flashes>
+                    {% for category, message in messages %}
+                      <li class="{{ category }}" style='color:#ff5555'>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                  {% endif %}
+                {% endwith %}
             </div>
         </div>
     </div>
