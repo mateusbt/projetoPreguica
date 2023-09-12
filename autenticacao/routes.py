@@ -10,12 +10,12 @@ autenticacao_bp = f.Blueprint("autenticacao", __name__, url_prefix="/auth")
 
 class LoginForm(FlaskForm):
     login = StringField("Usuário", validators=[DataRequired()])
-    senha = PasswordField("Senha", validators=[DataRequired(), Length(min=8)])
+    senha = PasswordField("Senha", validators=[DataRequired(), Length(min=10)])
 
 
 class RegistroForm(FlaskForm):
     login = StringField("Usuário", validators=[DataRequired()])
-    senha = PasswordField("Senha", validators=[DataRequired(), Length(min=8)])
+    senha = PasswordField("Senha", validators=[DataRequired(), Length(min=10)])
     nome = StringField("Nome", validators=[DataRequired()])
     cpf = StringField("CPF", validators=[DataRequired(), Length(11)])
 
