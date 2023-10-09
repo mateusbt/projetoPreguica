@@ -17,7 +17,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'XUXA'
 
 
-@app.route('/')
+@app.route('/h')
 def hello_world():
   return render_template('home.html', log=session)
 
@@ -48,7 +48,7 @@ def login():
 
   session['logado'] = login
 
-  return redirect('/')
+  return redirect('/h')
 
 
 @app.route('/registro', methods=['POST'])
@@ -94,6 +94,9 @@ def teste():
 def anuncio():
   return render_template('anuncio.html')
 
+@app.route('/anunciar')
+def anuncie():
+  return render_template('venda.html')
 
 if __name__ == '__main__':
   app.run(debug=True, )

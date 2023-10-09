@@ -56,6 +56,7 @@ nav {
 nav ul {
   display: flex;
   flex-direction: row;
+  block-size: auto;
 }
 
 nav ul li {
