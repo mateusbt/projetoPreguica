@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
-
+from projetoPreguica.utilidades import validador
 
 dados = {}
 
@@ -32,14 +32,25 @@ def principal():
   return render_template('registro.html')
 
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['POST', 'GET'])
 def login():
   login = request.form['usuario']
   senha = request.form['senha']
+  cpf = (request.form['cpf'])
 
+  print(dados)
+  if not validador(cpf):
+    flash("cpf invalido")
+    return redirect('/login')
+  
   if not dados.get(login):
     flash('Usuário não existe')
     return render_template('login.html')
+
+  if not dados.get(login).get('cpf') == cpf:
+    flash('cpf invalido')
+    return render_template('login.html')
+  
 
   dados_do_usuario = dados.get(login)
   if dados_do_usuario.get('senha') != senha:
@@ -55,15 +66,19 @@ def login():
 def cadastro():
   usuario = request.form['usuario']
   senha = request.form['senha']
+  cpf = request.form['cpf']
   confirmsenha = request.form['senha2']
 
+  if not validador(cpf):
+    flash("cpf invalido")
+    return redirect('/registro')
+  
   if dados.get(usuario):
     flash("Usuario já existente")
     return redirect('/registro')
 
   if senha == confirmsenha:
-    dados[usuario] = {'senha': senha}
-    print('passei por aqui')
+    dados[usuario] = {'senha': senha ,'cpf' : cpf}
     return redirect("/login")
 
   else:
@@ -82,14 +97,6 @@ def sair():
   return redirect('/login')
 
 
-@app.route('/v')
-def teste():
-  texto = ""
-  for dado in dados:
-    texto += f"usuario: {dado.usuario}, senha: {dado.senha}|| "
-  return texto
-
-
 @app.route('/anuncio')
 def anuncio():
   return render_template('anuncio.html')
@@ -97,6 +104,7 @@ def anuncio():
 @app.route('/anunciar')
 def anuncie():
   return render_template('venda.html')
+
 
 if __name__ == '__main__':
   app.run(debug=True, )

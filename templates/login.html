@@ -24,12 +24,13 @@
                     <form action="/login" method="post">
                         <label for="usuario">Usuário</label>
                         <input type="text" name="usuario" id="login" placeholder="Usuário" required>
-                        <label for="cpf">CPF:</label>
+                        <label for="cpf">Cpf:</label>
                         <input id="cpf"
                         type="text"
                         placeholder="cpf"
                         inputmode="numeric"
-                        minlength="11"
+                        name="cpf"
+                        minlength="14"
                         maxlength="14"
                         pattern="^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}"
                         required
@@ -59,6 +60,7 @@
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
