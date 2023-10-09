@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
-from projetoPreguica.utilidades import validador
+from utilidades import validador
 
 dados = {}
 
@@ -104,6 +104,14 @@ def anuncio():
 @app.route('/anunciar')
 def anuncie():
   return render_template('venda.html')
+
+@app.route('/perfil')
+def perfil_usr():
+  return render_template('perfil.html')
+
+@app.route('/carrousr')
+def carros_usr():
+  return render_template('carrosanunc.html')
 
 
 if __name__ == '__main__':
