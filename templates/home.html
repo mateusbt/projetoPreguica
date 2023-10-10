@@ -23,18 +23,22 @@
             <button type="submit">Login</button>
             </a>
             {%endif%}
-
+            {%if ('logado' in log) %}
             <a href="/anunciar">
               <button type="submit">Anuncie!</button>
               </a>
-
+            {%endif%}
             {%if ('logado' in log) %}
             <a href="/sair">
             <button type="submit">Sair</button>
             </a>
             {%endif%}
 
-            
+            {%if ('logado' in log) %}
+            <a href="/Perfil">
+            <button type="submit">Perfil</button>
+            </a>
+            {%endif%}
 
           </ul>
         </nav>
