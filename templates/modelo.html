@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jetta GLI</title>
+
+    <link  rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"  crossorigin="anonymous">
+    <link rel="stylesheet" href= "/static/anuncio.css">
+    <link rel="stylesheet" href="/static/home.css">
+  <body>
+    <header>
+      <div class="content">
+        <nav>
+          <p class="brand">Web<strong>Cars</strong></p>
+          <ul>
+            <li><a href="#catalog">Catalogo</a></li>
+            <li><a href="#about">Sobre nós</a></li>
+            <li><a href="#feature">Features</a></li>
+
+
+            {%if not ('logado' in log) %}
+            <a href="/login">
+            <button type="submit">Login</button>
+            </a>
+            {%endif%}
+
+            {%if ('logado' in log) %}
+            <a href="/sair">
+            <button type="submit">Sair</button>
+            </a>
+            {%endif%}
+          </ul>
+        </nav>
+        <div class="slider">
+          <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            
+
+
+            <div class="slide first">
+                <img src="{{ carro.imagem }}" alt="1">
+            </div>
+
+            <div class="slide  ">
+                <img src="{{ carro.imagem }}" alt="2">
+
+            <div class="slide  ">
+                <img src="{{ carro.imagem }}" alt="3">
+            </div>
+
+
+          </div>
+          <div class="navegation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            
+          </div>
+          <div class="manual-navegation">
+            <label for="radio1" class ='manual-btn'></label>
+            <label for="radio2" class ='manual-btn'></label>
+            <label for="radio3" class ='manual-btn'></label>
+            
+            
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="catalog container " id="catalog">
+      <div class="card">
+  <h5 class="card-header">Jetta GLI 2020</h5>
+  <div class="card-body">
+    <strong id="" class="valor">R$ 183.900</strong>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <h2 class="cidade">Cidade</h2>
+          <p>Jundiaí-SP</p>
+        </div>
+        <div class="col-6">
+          <h2 class="ano">Ano:</h2>
+            <p>2020/2020</p>
+        </div>
+        <div class="col">
+          <h2 class="km">KM: </h2>
+          <p>41.000</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2 class="cambio">Câmbio: </h2>
+            <p>Automatico</p>
+        </div>
+        <div class="col-5">
+          <h2 class="combustivel">Combustivel:</h2>
+          <p>Gasolina</p>
+        </div>
+        <div class="col">
+          <h2 class="cor">Cor:</h2>
+         <p>Branco</p>
+        </div>
+      </div>
+    </div>
+    <h2 class="textdesc">Descrição do veiculo: </h2>
+    <p class="card-text">SEM DETALHES,UNICO DONO,TODAS AS REVISOES NA VOLKS,GARANTIA DE FÁBRICA,TETO-SOLAR</p>
+    <a href="#" class="btn btn-primary">Entrar em contato com vendedor</a>
+  </div>
+</div>
+    </section>
+    <section class="catalog2">
+      <div class="card my-5 container p-4">
+  <h5 class="card-header">Contatos do vendedor abaixo:</h5>
+  <div class="card-body">
+    <strong id="" class="valor">83987838300</strong>
+
+    <h2 class="textdesc">Email do vendedor: </h2>
+    <p class="card-text">mateushbt2021@gmail.com</p>
+
+  </div>
+</div>
+    </section>
+  <body>
+      
+    {% include 'footer.html'%}
+       
+     
+    <script  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"  crossorigin="anonymous"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"  integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"  crossorigin="anonymous"></script>
+    <script  src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"  crossorigin="anonymous"></script>
+          
+</html>

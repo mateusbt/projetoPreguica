@@ -14,45 +14,45 @@
         <h1>Anuncio</h1>
         <form id="form">
             <div>
-                <input type="text" placeholder="Digite o modelo do carro" class="inputs required" oninput="nameValidate()">
+                <input type="text" name="modelo" placeholder="Digite o modelo do carro" class="inputs required" oninput="nameValidate()">
                 <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
             </div>
             <div>
-                <input type="text" placeholder="Digite a cor do seu carro" class="inputs required" >
+                <input type="text" name="cor" placeholder="Digite a cor do seu carro" class="inputs required" >
                 
             </div>
             <div>
-                <input type="number" placeholder="Digite o ano do carro" class="inputs required" minlength="4" maxlength="4">
+                <input type="number" name="ano" placeholder="Digite o ano do carro" class="inputs required" minlength="4" maxlength="4">
                 
             </div>
             
             <div>
-                <input type="number" placeholder="Digite a kilometragem do carro" class="inputs required" >
+                <input type="number" name="km" placeholder="Digite a kilometragem do carro" class="inputs required" >
                 
             </div>
 
             <div>
-                <input type="text" placeholder="Placa do carro" class="inputs required" oninput="validarPlaca" >
+                <input type="text" name="placa" placeholder="Placa do carro" class="inputs required" oninput="validarPlaca" >
                 
             </div>
 
             <div>
-                <input type="tel" placeholder="Contato do vendedor" class="inputs required" oninput="telefone_validation" >
+                <input type="tel" name="Contato" placeholder="Contato do vendedor" class="inputs required" oninput="telefone_validation" >
                 
             </div>
             <textarea class="inputs" name="descricao" id="descricao" cols="25" rows="10" placeholder="Fale um pouco sobre o carro"></textarea>
             <p>Câmbio:</p>
             <div class="box-select1">
                 <div>
-                    <input type="radio" id="m" value="m" name="sexo">
+                    <input type="radio" id="m" value="m" name="cambio1">
                     <label for="m">Automatico</label>
                 </div>
                 <div>
-                    <input type="radio" id="f" value="f" name="sexo">
+                    <input type="radio" id="f" value="f" name="cambio2">
                     <label for="f">Manual</label>
                 </div>
                 <div>
-                    <input type="radio" id="o" value="o" name="sexo">
+                    <input type="radio" id="o" value="o" name="cambio">
                     <label for="o">Outro</label>
                 </div>
             </div>
@@ -75,141 +75,5 @@
         </form>
     </div>
 </body>
-<script>
-    const form   = document.getElementById('form');
-    const campos = document.querySelectorAll('.required');
-    const spans  = document.querySelectorAll('.span-required');
-    const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        nameValidate();
-        telefone_validation;
-        validarPlaca;
-    });
-
-    function setError(index){
-        campos[index].style.border = '2px solid #e63636';
-        spans[index].style.display = 'block';
-    }
-
-    function removeError(index){
-        campos[index].style.border = '';
-        spans[index].style.display = 'none';
-    }
-
-    function nameValidate(){
-        if(campos[0].value.length < 3)
-        {
-            setError(0);
-        }
-        else
-        {
-            removeError(0);
-        }
-    }
-
-    function emailValidate(){
-        if(!emailRegex.test(campos[1].value))
-        {
-            setError(1);
-        }
-        else
-        {
-            removeError(1);
-        }
-    }
-
-    function mainPasswordValidate(){
-        if(campos[2].value.length < 8)
-        {
-            setError(2);
-        }
-        else
-        {
-            removeError(2);
-            comparePassword();
-        }
-    }
-
-    function comparePassword(){
-        if(campos[2].value == campos[3].value && campos[3].value.length >= 8)
-        {
-            removeError(3);
-        }
-        else
-        {
-            setError(3);
-        }
-    }
-    function telefone_validation(telefone) {
-    //retira todos os caracteres menos os numeros
-    telefone = telefone.replace(/\D/g, '');
-
-    //verifica se tem a qtde de numero correto
-    if (!(telefone.length >= 10 && telefone.length <= 11)) return false;
-
-    //Se tiver 11 caracteres, verificar se começa com 9 o celular
-    if (telefone.length == 11 && parseInt(telefone.substring(2, 3)) != 9) return false;
-
-    //verifica se não é nenhum numero digitado errado (propositalmente)
-    for (var n = 0; n < 10; n++) {
-        //um for de 0 a 9.
-        //estou utilizando o metodo Array(q+1).join(n) onde "q" é a quantidade e n é o
-        //caractere a ser repetido
-        if (telefone == new Array(11).join(n) || telefone == new Array(12).join(n)) return false;
-    }
-    //DDDs validos
-    var codigosDDD = [11, 12, 13, 14, 15, 16, 17, 18, 19,
-        21, 22, 24, 27, 28, 31, 32, 33, 34,
-        35, 37, 38, 41, 42, 43, 44, 45, 46,
-        47, 48, 49, 51, 53, 54, 55, 61, 62,
-        64, 63, 65, 66, 67, 68, 69, 71, 73,
-        74, 75, 77, 79, 81, 82, 83, 84, 85,
-        86, 87, 88, 89, 91, 92, 93, 94, 95,
-        96, 97, 98, 99];
-    //verifica se o DDD é valido (sim, da pra verificar rsrsrs)
-    if (codigosDDD.indexOf(parseInt(telefone.substring(0, 2))) == -1) return false;
-
-    //  E por ultimo verificar se o numero é realmente válido. Até 2016 um celular pode
-    //ter 8 caracteres, após isso somente numeros de telefone e radios (ex. Nextel)
-    //vão poder ter numeros de 8 digitos (fora o DDD), então esta função ficará inativa
-    //até o fim de 2016, e se a ANATEL realmente cumprir o combinado, os numeros serão
-    //validados corretamente após esse período.
-    //NÃO ADICIONEI A VALIDAÇÂO DE QUAIS ESTADOS TEM NONO DIGITO, PQ DEPOIS DE 2016 ISSO NÃO FARÁ DIFERENÇA
-    //Não se preocupe, o código irá ativar e desativar esta opção automaticamente.
-    //Caso queira, em 2017, é só tirar o if.
-    if (new Date().getFullYear() < 2017) return true;
-    if (telefone.length == 10 && [2, 3, 4, 5, 7].indexOf(parseInt(telefone.substring(2, 3))) == -1) return false;
-
-    //se passar por todas as validações acima, então está tudo certo
-    return true;
-}
-
-//chamada simples
-//telefone_validation("(11)99000-3777"); // retorna true
-//telefone_validation("11-99000-3777"); // retorna true
-//telefone_validation("11990003777"); // retorna true
-//telefone_validation("1111111111"); // retorna false
-//telefone_validation("1111111111"); // retorna false
-//telefone_validation("(01)3444-4444"); // retorna false
-//telefone_validation("(01)43444-4444"); // retorna false
-
-function validarPlaca(placa){
- var resposta = "placa inválida";
- const regexPlaca = /^[a-zA-Z]{3}[0-9]{4}$/;
- const regexPlacaMercosulCarro = /^[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$/;
- const regexPlacaMercosulMoto = /^[a-zA-Z]{3}[0-9]{2}[a-zA-Z]{1}[0-9]{1}$/;
- if(regexPlaca.test(placa)){
- resposta = "Placa válida no formato atual";
- }
- if(regexPlacaMercosulCarro.test(placa)){
- resposta = "Placa válida (padrão Mercosul - carro)";
- }
- if(regexPlacaMercosulMoto.test(placa)){
- resposta = "Placa válida (padrão Mercosul - moto)";
- }
- return resposta;
-}
-</script>
 </html>

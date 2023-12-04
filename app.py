@@ -2,7 +2,21 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from utilidades import validador
 
 dados = {}
+dadosc=[]
 
+class Carro:
+  def __init__(self,modelo,cor,ano,km,descricao,cambio,cambio1,cambio2,imagem,contato):
+    self.modelo=modelo
+    self.cor=cor
+    self.ano=ano
+    self.km=km
+    self.descricao=descricao
+    self.cambio=cambio
+    self.cambio1=cambio1
+    self.cambio2=cambio2
+    self.imagem=imagem
+    self.contato=contato
+    
 
 class Usuario:
 
@@ -101,10 +115,31 @@ def sair():
 def anuncio():
   return render_template('anuncio.html')
 
-@app.route('/anunciar')
+@app.route('/anunciar',methods=['POST'])
 def anuncie():
   return render_template('venda.html')
 
+@app.route('/anunciei',methods=['POST'])
+def cadastrou():
+    if request.method==['POST']:
+      modelo= request.form['modelo']
+      cor= request.form['cor']
+      placa=request.form['placa']
+      ano= request.form['ano']
+      kilometragem=request.form['km']
+      contato=request.form['contato']
+      descricao=request.form['descricao']
+      cambio=request.form['cambio']
+      cambio1=request.form['cambio1']
+      cambio2=request.form['cambio2']
+      imagem=request.form['picture_input']
+      carro=Carro(modelo,cor,placa,ano,kilometragem,contato,descricao,cambio,cambio1,cambio2,imagem)
+      carro.append(dadosc)
+      return redirect ('/',dadosc=dadosc)
+    else:
+      return redirect('/anuncio')
+
+    
 @app.route('/perfil')
 def perfil_usr():
   return render_template('perfil.html')
@@ -112,6 +147,10 @@ def perfil_usr():
 @app.route('/carrousr')
 def carros_usr():
   return render_template('carrosanunc.html')
+
+@app.route('/modelo',methods=['GET'])
+def modelo():
+  return render_template('modelo.html')
 
 
 if __name__ == '__main__':
