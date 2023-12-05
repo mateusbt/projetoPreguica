@@ -5,7 +5,7 @@ dados = {}
 dadosc=[]
 
 class Carro:
-  def __init__(self,modelo,cor,ano,km,descricao,cambio,cambio1,cambio2,imagem,contato):
+  def __init__(self,cidade,modelo,cor,ano,km,descricao,cambio,cambio1,cambio2,imagem,contato,Combustivel,valor):
     self.modelo=modelo
     self.cor=cor
     self.ano=ano
@@ -16,6 +16,9 @@ class Carro:
     self.cambio2=cambio2
     self.imagem=imagem
     self.contato=contato
+    self.Combustivel=Combustivel
+    self.valor=valor
+    self.cidade=cidade
     
 
 class Usuario:
@@ -115,7 +118,7 @@ def sair():
 def anuncio():
   return render_template('anuncio.html')
 
-@app.route('/anunciar',methods=['POST'])
+@app.route('/anunciar')
 def anuncie():
   return render_template('venda.html')
 
@@ -124,7 +127,7 @@ def cadastrou():
     if request.method==['POST']:
       modelo= request.form['modelo']
       cor= request.form['cor']
-      placa=request.form['placa']
+      cidade=request.form['cidade']
       ano= request.form['ano']
       kilometragem=request.form['km']
       contato=request.form['contato']
@@ -133,8 +136,10 @@ def cadastrou():
       cambio1=request.form['cambio1']
       cambio2=request.form['cambio2']
       imagem=request.form['picture_input']
-      carro=Carro(modelo,cor,placa,ano,kilometragem,contato,descricao,cambio,cambio1,cambio2,imagem)
-      carro.append(dadosc)
+      Combustivel=request.form['Combustivel']
+      valor=request.form['Valor']
+      carro=Carro(modelo,cor,cidade,ano,kilometragem,contato,descricao,cambio,cambio1,cambio2,imagem,Combustivel,valor)
+      dadosc.append(carro)
       return redirect ('/',dadosc=dadosc)
     else:
       return redirect('/anuncio')

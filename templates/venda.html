@@ -12,6 +12,7 @@
 <body>
     <div class="content">
         <h1>Anuncio</h1>
+        <form action="cadastrou" method="POST">
         <form id="form">
             <div>
                 <input type="text" name="modelo" placeholder="Digite o modelo do carro" class="inputs required" oninput="nameValidate()">
@@ -32,12 +33,21 @@
             </div>
 
             <div>
-                <input type="text" name="placa" placeholder="Placa do carro" class="inputs required" oninput="validarPlaca" >
+                <input type="text" name="cidade" placeholder="Cidade do veiculo" class="inputs required" oninput="validarPlaca" >
                 
             </div>
 
             <div>
                 <input type="tel" name="Contato" placeholder="Contato do vendedor" class="inputs required" oninput="telefone_validation" >
+                
+            </div>
+
+            <div>
+                <input type="text" name="Combustivel" placeholder="Combustivel utilizado" class="inputs required" oninput="validarPlaca" >
+                
+            </div>
+            <div>
+                <input type="text" name="Valor" placeholder="Valor requerido" class="inputs required" oninput="validarPlaca" >
                 
             </div>
             <textarea class="inputs" name="descricao" id="descricao" cols="25" rows="10" placeholder="Fale um pouco sobre o carro"></textarea>
@@ -69,9 +79,9 @@
                   
                   
             </div>
-            <a href="/h">
-            <button type="submit">Enviar</button>
-                </a>    
+            
+            <button type="submit" class="btn btn-primary">Enviar</button>
+                  
         </form>
     </div>
 </body>

@@ -39,7 +39,7 @@
             <input type="radio" name="radio-btn" id="radio2">
             <input type="radio" name="radio-btn" id="radio3">
             
-
+            {% for carro in dadosc %}
 
             <div class="slide first">
                 <img src="{{ carro.imagem }}" alt="1">
@@ -72,41 +72,41 @@
     </header>
     <section class="catalog container " id="catalog">
       <div class="card">
-  <h5 class="card-header">Jetta GLI 2020</h5>
+  <h5 class="card-header">{{ carro.modelo }}</h5>
   <div class="card-body">
-    <strong id="" class="valor">R$ 183.900</strong>
+    <strong id="" class="valor">{{ carro.valor }}</strong>
     <div class="container text-center">
       <div class="row">
         <div class="col">
-          <h2 class="cidade">Cidade</h2>
-          <p>Jundiaí-SP</p>
+          <h2 class="cidade">Cidade:</h2>
+          <p>{{ carro.cidade }}</p>
         </div>
         <div class="col-6">
           <h2 class="ano">Ano:</h2>
-            <p>2020/2020</p>
+            <p>{{ carro.ano }}</p>
         </div>
         <div class="col">
-          <h2 class="km">KM: </h2>
-          <p>41.000</p>
+          <h2 class="km">Kilometragem: </h2>
+          <p>{{ carro.kilometragem }}</p>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <h2 class="cambio">Câmbio: </h2>
-            <p>Automatico</p>
+          <h2 class="cambio">Câmbio </h2>
+            <p>{{ carro.cambio }}</p>
         </div>
         <div class="col-5">
           <h2 class="combustivel">Combustivel:</h2>
-          <p>Gasolina</p>
+          <p>{{ carro.Combustivel }}</p>
         </div>
         <div class="col">
           <h2 class="cor">Cor:</h2>
-         <p>Branco</p>
+         <p>{{ carro.cor }}</p>
         </div>
       </div>
     </div>
     <h2 class="textdesc">Descrição do veiculo: </h2>
-    <p class="card-text">SEM DETALHES,UNICO DONO,TODAS AS REVISOES NA VOLKS,GARANTIA DE FÁBRICA,TETO-SOLAR</p>
+    <p class="card-text">{{ carro.descricao }}</p>
     <a href="#" class="btn btn-primary">Entrar em contato com vendedor</a>
   </div>
 </div>
@@ -115,11 +115,8 @@
       <div class="card my-5 container p-4">
   <h5 class="card-header">Contatos do vendedor abaixo:</h5>
   <div class="card-body">
-    <strong id="" class="valor">83987838300</strong>
-
-    <h2 class="textdesc">Email do vendedor: </h2>
-    <p class="card-text">mateushbt2021@gmail.com</p>
-
+    <strong id="" class="valor">{{ carro.contato }}</strong>
+    {% endfor %}
   </div>
 </div>
     </section>
