@@ -155,7 +155,8 @@ def carros_usr():
 
 @app.route('/modelo',methods=['GET'])
 def modelo():
-  return render_template('modelo.html')
+  return render_template('modelo.html',dadosc=dadosc)
+
 
 
 if __name__ == '__main__':
